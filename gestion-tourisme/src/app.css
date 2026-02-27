@@ -7,18 +7,28 @@
 
 }
 /*Couleur*/
+
 :root {
-    --PrimaryColor: hsl(199, 100%, 33%);
-    --SecondaryColor: hsl(187, 85%, 43%);
-    --gradientColor: linear-gradient(to right, hsl(199, 100%, 33%), hsl(187, 85%, 43%));
+    /* Marrakech Warm Theme */
+
+    --PrimaryColor: hsl(14, 70%, 40%);        /* Red Ochre */
+    --SecondaryColor: hsl(25, 85%, 55%);      /* Warm Orange */
+    --gradientColor: linear-gradient(to right, hsl(14, 70%, 40%), hsl(25, 85%, 55%));
+    
     --whiteColor: hsl(0, 0%, 100%);
-    --blackColor: hsl(201, 33%, 16%);
-    --textColor: hsl(240, 4%, 36%);
-    --whiteColorDeam: hsl(0, 0%, 93%);
-    --greyText: hsl(240, 1%, 48%);
-    --inputColor: rgb(239, 239, 239);
-    --bodyColor: rgb(240, 240, 246);
-    --cardBG: rgb(225, 225, 235);
+    --blackColor: hsl(20, 30%, 15%);
+    
+    --textColor: hsl(20, 25%, 25%);
+    --whiteColorDeam: hsl(30, 40%, 92%);      /* Soft Beige */
+    --greyText: hsl(25, 10%, 45%);
+    
+    --inputColor: hsl(30, 30%, 94%);
+    --bodyColor: hsl(30, 50%, 96%);           /* Desert Background */
+    --cardBG: hsl(30, 35%, 90%);
+    --cardHover: rgb(255, 255, 255);
+}
+html{
+    scroll-behavior: smooth;
 }
 /*style*/
 a{
@@ -70,4 +80,19 @@ input{
 }
 body{
     background: var(--bodyColor);
+}
+
+@media screen and(min-with:1240px){
+    .container{
+        width: 80% !important;
+        margin:auto !important;
+    }
+    .section{
+        padding: 6rem 0 4rem;
+    }
+}
+@media screen and(min-with:2560px){
+    body{
+        zoom:1.7;
+    }
 }

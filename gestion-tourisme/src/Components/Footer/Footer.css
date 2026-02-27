@@ -1,17 +1,23 @@
 
+
 :root {
-    /* ألوان ومتغيرات عامة */
-    --PrimaryColor: hsl(199, 100%, 33%);
-    --SecondaryColor: hsl(187, 85%, 43%);
-    --gradientColor: linear-gradient(to right, hsl(199, 100%, 33%), hsl(187, 85%, 43%));
+    /* Marrakech Warm Theme */
+
+    --PrimaryColor: hsl(14, 70%, 40%);        /* Red Ochre */
+    --SecondaryColor: hsl(25, 85%, 55%);      /* Warm Orange */
+    --gradientColor: linear-gradient(to right, hsl(14, 70%, 40%), hsl(25, 85%, 55%));
+    
     --whiteColor: hsl(0, 0%, 100%);
-    --blackColor: hsl(201, 33%, 16%);
-    --textColor: hsl(240, 4%, 36%);
-    --whiteColorDeam: hsl(0, 0%, 93%);
-    --greyText: hsl(240, 1%, 48%);
-    --inputColor: rgb(239, 239, 239);
-    --bodyColor: rgb(240, 240, 246);
-    --cardBG: rgb(225, 225, 235);
+    --blackColor: hsl(20, 30%, 15%);
+    
+    --textColor: hsl(20, 25%, 25%);
+    --whiteColorDeam: hsl(30, 40%, 92%);      /* Soft Beige */
+    --greyText: hsl(25, 10%, 45%);
+    
+    --inputColor: hsl(30, 30%, 94%);
+    --bodyColor: hsl(30, 50%, 96%);           /* Desert Background */
+    --cardBG: hsl(30, 35%, 90%);
+    --cardHover: rgb(255, 255, 255);
 }
 .footer{
     width: 100%;
@@ -35,8 +41,7 @@
 .footer-videoDiv::after{
     content: '';
     position: absolute;
-    background: rgba(10, 84, 
-    107, 0.307);
+    background: rgba(120, 40, 25, 0.45);
     top:0;
     bottom: 0;
     right: 0;
@@ -149,5 +154,98 @@
 .footer-socials .icon:hover{
     color: var(--PrimaryColor);
 }
+.footer-links {
+    flex-basis: 50%;
+    width: 100%;
+    gap: 1rem;
+    
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+}
+.footer-links .footer-linkGroup .footer-groupTitle{
+    display: block;
+    font-weight: 600;
+    color: var(--blackColor);
+    margin-bottom: .5rem;
+}
+.footer-links .footer-linkGroup .footer-list {
+    font-size: 15px;
+    color: var(--textColor);
+    transition: .3s ease-in-out;
+}
 
+.footer-links .footer-linkGroup .footer-list .icon {
+    font-size: 15px;
+    color: var(--greyText);
+}
 
+/* ✅ الـ hover يطبق عند المرور على الـ li */
+.footer-links .footer-linkGroup .footer-list:hover  {
+    transform: translateX(7px);
+    color: var(--PrimaryColor);
+}
+.footer-links .footer-linkGroup .footer-list:hover  .icon{
+    
+    color: var(--SecondaryColor);
+}
+.footerDiv{
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--SecondaryColor);
+    padding: .5rem 2rem;
+
+}
+.footerDiv small{
+    font-size: 10px;
+    color: var(--whiteColor);
+}
+@media screen and (min-width: 500px) {
+    .footer-links{
+        grid-template-columns: repeat(3,1fr);
+        padding-bottom: 1rem;
+    }
+    .footerDiv{
+        justify-content: space-between;
+        flex-direction: row;
+
+    }
+    .footerDiv small{
+        font-size: 14px;
+        color: var(--whiteColor);
+
+    }
+}
+@media screen and (min-width: 600px) {
+    .footer-links{
+        grid-template-columns: repeat(3,1fr);
+        padding-bottom: 1rem;
+    }
+    .footerDiv{
+        justify-content: space-between;
+        flex-direction: row;
+
+    }
+    .footerDiv small{
+        font-size: 14px;
+        color: var(--whiteColor);
+
+    }
+    .footer-contactDiv{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .footer-inputDiv{
+        width: max-content;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .footer-inputDiv input{
+        width: 60%;
+    }
+    .footer-inputDiv .btn{
+        width: max-content;
+    }
+    }

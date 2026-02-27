@@ -1,0 +1,111 @@
+/* ===== Marrakech Warm Theme ===== */
+
+:root {
+    --PrimaryColor: hsl(14, 70%, 40%);
+    --SecondaryColor: hsl(25, 85%, 55%);
+    --gradientColor: linear-gradient(to right, hsl(14, 70%, 40%), hsl(25, 85%, 55%));
+    
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(20, 30%, 15%);
+    
+    --textColor: hsl(20, 25%, 25%);
+    --whiteColorDeam: hsl(30, 40%, 92%);
+    --greyText: hsl(25, 10%, 45%);
+    
+    --inputColor: hsl(30, 30%, 94%);
+    --bodyColor: hsl(30, 50%, 96%);
+    --cardBG: hsl(30, 35%, 90%);
+}
+
+/* ===== Section ===== */
+
+.createHotel{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bodyColor);
+    padding: 2rem;
+}
+
+.createContainer{
+    background: var(--cardBG);
+    padding: 2.5rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== Title ===== */
+
+.createTitle{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--PrimaryColor);
+    position: relative;
+}
+
+.createTitle::after{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--SecondaryColor);
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ===== Form ===== */
+
+.createForm{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--textColor);
+}
+
+.formGroup input{
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--greyText);
+    background: var(--inputColor);
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.formGroup input:focus{
+    border-color: var(--PrimaryColor);
+    box-shadow: 0 0 5px rgba(173, 63, 42, 0.4);
+}
+
+/* ===== Button ===== */
+
+.createBtn{
+    margin-top: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: var(--gradientColor);
+    color: var(--whiteColor);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.createBtn:hover{
+    background: var(--PrimaryColor);
+    transform: translateY(-2px);
+}
