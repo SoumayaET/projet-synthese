@@ -1,174 +1,236 @@
-
 :root {
     /* Marrakech Warm Theme */
-
-    --PrimaryColor: hsl(14, 70%, 40%);        /* Red Ochre */
-    --SecondaryColor: hsl(25, 85%, 55%);      /* Warm Orange */
+    --PrimaryColor: hsl(14, 70%, 40%);
+    --SecondaryColor: hsl(25, 85%, 55%);
     --gradientColor: linear-gradient(to right, hsl(14, 70%, 40%), hsl(25, 85%, 55%));
     
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(20, 30%, 15%);
     
     --textColor: hsl(20, 25%, 25%);
-    --whiteColorDeam: hsl(30, 40%, 92%);      /* Soft Beige */
+    --whiteColorDeam: hsl(30, 40%, 92%);
     --greyText: hsl(25, 10%, 45%);
     
     --inputColor: hsl(30, 30%, 94%);
-    --bodyColor: hsl(30, 50%, 96%);           /* Desert Background */
+    --bodyColor: hsl(30, 50%, 96%);
     --cardBG: hsl(30, 35%, 90%);
     --cardHover: rgb(255, 255, 255);
 }
 
-.main{
-    width:100% ;
-
+/* Main */
+.main {
+    width: 100%;
 }
-.main-secTitle .main-title{
+
+/* Title */
+.main-secTitle .main-title {
     position: relative;
     width: max-content;
     color: var(--textColor);
     margin: 1rem 0;
     z-index: 2;
-
+    font-size: 1.2rem;
 }
-.main-secTitle .main-title::after{
+
+.main-secTitle .main-title::after {
     position: absolute;
     content: '';
     background: var(--SecondaryColor);
-    height: 5px;
-    width: 120px;
+    height: 4px;
+    width: 100px;
     right: 0;
     bottom: 5px;
     z-index: -1;
 }
-.main-secContainer{
-    justify-content: center;
-    gap: 1.5rem;
-}
-.main-singleDestination{
-    height: 100%;
-    display: grid;
-    row-gap:10px;
-    /*padding: 1rem;*/
-    border-radius: 10px;
-    align-items: center;
-    background: var(--cardBG);
-    box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
-    overflow: hidden;
 
+/* Slider wrapper */
+.main-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
-.main-singleDestination:hover{
+
+/* Horizontal scroll */
+.main-secContainer {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 0.8rem;
+    padding: 1rem 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.main-secContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card */
+.main-singleDestination {
+    min-width: 200px;
+    max-width: 200px;
+    height: 320px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 10px;
+    background: var(--cardBG);
+    box-shadow: 0 2px 4px rgba(140, 140, 141, 0.4);
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.main-singleDestination:hover {
     background: var(--cardHover);
-    box-shadow: 1 4px 4px rgba(85, 85, 114 , 0.549);
+    box-shadow: 1px 4px 6px rgba(85, 85, 114, 0.4);
     transition: .3s ease;
 }
-.main-imageDiv{
-    height: 180px;
+
+/* Image */
+.main-imageDiv {
+    height: 120px; /* 👈 صغرنا الصورة */
     width: 100%;
     overflow: hidden;
-    
 }
-.main-imageDiv img{
+
+.main-imageDiv img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    transition: 2s ease;
+    transition: 0.4s ease;
+}
 
+.main-imageDiv img:hover {
+    transform: scale(1.05);
 }
-.main-imageDiv img:hover{
-  
-        transform: scale(1.1);
-  
-}
-.main-cardInfo{
-    padding: 1rem;
 
+/* Info */
+.main-cardInfo {
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
 }
-.main-cardInfo .main-desTitle{
+
+.main-cardInfo .main-desTitle {
     color: var(--blackColor);
-    font-size: 1.25rem;
-    
+    font-size: 0.9rem;
+    font-weight: 600;
+}
 
-}
-.main-cardInfo .main-continent{
-    
-    gap: .5rem;
-}
-.main-cardInfo .main-continent .icon{
-    color: var(--textColor);
-    font-size: 18px;
-    
-}
-.main-cardInfo .main-continent .main-name{
-    color : var(--textColor);
-    font-weight: 400;
-    font-size: 14px;
-}
-.main-fees{
-    width: 100%;
-    justify-content: space-between;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-top: 1.5px solid var(--greyText);
-
-}
-.main-grade{
-    color: var(--textColor);
-    max-width: 100px;
-    line-height: 20px;
+/* Location */
+.main-cardInfo .main-continent {
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    gap: 4px;
 }
-.main-grade small{
-    text-align: center;
+
+.main-cardInfo .icon {
+    font-size: 13px;
+    color: var(--textColor);
+}
+
+.main-cardInfo .main-name {
+    color: var(--textColor);
+    font-size: 11px;
+}
+
+/* Fees */
+.main-fees {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    margin: 0.4rem 0;
+    border-top: 1px solid var(--greyText);
+}
+
+.main-grade {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+}
+
+.main-grade small {
     background: var(--gradientColor);
     border-radius: 1rem;
     color: var(--whiteColor);
-    padding: 1px 10px;
-    font-size: 10px;
+    padding: 1px 6px;
+    font-size: 8px;
+    margin-left: 4px;
 }
-.main-price{
-    font-size: 2rem;
+
+.main-price {
+    font-size: 0.9rem;
     color: var(--blackColor);
 }
-.main-desc{
-    font-size: 13.5px;
+
+/* Description */
+.main-desc {
+    font-size: 10px;
     color: var(--textColor);
-    font-weight: 500;
+    height: 30px;
+    overflow: hidden;
 }
-.main-btn{
-    margin-top: 1rem;
+
+/* Button */
+.main-btn {
+    margin-top: 0.4rem;
+    font-size: 11px;
+    padding: 6px;
     color: var(--whiteColor);
-    font-weight: 600;
-    justify-content: space-between;
-    gap: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
 }
-.main-desc .icon{
-    align-self: center;
-    font-size: 18px;
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    z-index: 10;
+    background: var(--PrimaryColor);
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
 }
+
+.scroll-btn.left {
+    left: -5px;
+}
+
+.scroll-btn.right {
+    right: -5px;
+}
+
+.scroll-btn:hover {
+    background: var(--SecondaryColor);
+}
+
+/* Responsive */
 @media screen and (min-width: 500px) {
     .main-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     .main-title::after {
-        width: 155px !important;
-    }
-    .main-secContainer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .main-singleDestination{
-        height: auto;
+        width: 140px !important;
     }
 }
-@media screen and (min-width: 840px) {
 
-    .main-secContainer {
-        grid-template-columns: repeat(3, 1fr);
+@media screen and (min-width: 840px) {
+    .main-singleDestination {
+        min-width: 220px;
+        max-width: 220px;
+        height: 340px;
     }
-    .main-singleDestination{
-        height: auto;
+
+    .main-imageDiv {
+        height: 130px;
     }
 }

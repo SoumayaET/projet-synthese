@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
 import './Login.css'
 
@@ -9,37 +9,40 @@ export default function Login() {
 
   const [email,setEmail]= useState('')
   const [password,setPassword]= useState('')
+  const [error,setError]= useState('')
 
   const loginUser = async(e)=>{
-      e.preventDefault()
+    e.preventDefault()
 
-      try{
-        const {data} = await axios.post('http://127.0.0.1:8000/api/login',{
-          email,
-          password
-        })
+    try{
+      const {data} = await axios.post('http://127.0.0.1:8000/api/login',{
+        email,
+        password
+      })
 
-        // حفظ التوكن
-        localStorage.setItem('token', data.token)
-        localStorage.setItem('user', JSON.stringify(data.user))
+      localStorage.setItem('token', data.token)
+      localStorage.setItem('user', JSON.stringify(data.user))
 
-        // توجيه حسب الدور
-        if(data.user.role === 'owner'){
-          navigate('/owner-dashboard')
-        }else{
-          navigate('/')
-        }
+      window.dispatchEvent(new Event('authChange')) // 🔥 مهم
 
-      }catch(error){
-        console.log(error.response?.data?.message)
+      if(data.user.role === 'admin'){
+        navigate('/admin-dashboard')
+      }else if(data.user.role === 'owner'){
+        navigate('/owner-dashboard')
+      }else{
+        navigate('/')
       }
+
+    }catch(error){
+      setError("Email ou mot de passe incorrect")
+    }
   }
 
   return (
     <section className="createHotel">
       <div className="createContainer">
         
-        <h2 className="createTitle">Login</h2>
+        <h2 className="createTitle">Connexion</h2>
 
         <form onSubmit={loginUser} className="createForm">
 
@@ -65,11 +68,19 @@ export default function Login() {
             />
           </div>
 
+          {error && <p style={{color:'red'}}>{error}</p>}
+
           <button type="submit" className="createBtn">
-            Login
+            Se connecter
           </button>
 
         </form>
+
+        <p style={{ textAlign: "center", marginTop: "8px", fontSize: "12px" }}>
+          <Link to="/forgot-password">
+            Mot de passe oublié ?
+          </Link>
+        </p>
 
       </div>
     </section>

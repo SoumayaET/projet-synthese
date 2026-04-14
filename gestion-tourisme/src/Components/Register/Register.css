@@ -1,5 +1,3 @@
-/* ===== Marrakech Warm Theme - Register ===== */
-
 :root {
     --PrimaryColor: hsl(14, 70%, 40%);
     --SecondaryColor: hsl(25, 85%, 55%);
@@ -19,105 +17,86 @@
 
 /* ===== Section ===== */
 
-.registerSection {
+/* ===== Section ===== */
+
+.createHotel {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: var(--bodyColor);
-    padding: 2rem;
+    padding: 1rem; /* أصغر */
 }
 
 /* ===== Container ===== */
 
-.registerContainer {
+.createContainer {
     background: var(--cardBG);
-    padding: 2.5rem;
-    border-radius: 15px;
+    padding: 1.2rem; /* أصغر */
+    border-radius: 10px;
     width: 100%;
-    max-width: 500px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: 0.3s ease;
-}
-
-.registerContainer:hover {
-    transform: translateY(-3px);
+    max-width: 320px; /* أصغر بزاف */
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
 }
 
 /* ===== Title ===== */
 
-.registerTitle {
+.createTitle {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: var(--PrimaryColor);
     position: relative;
-    font-size: 24px;
+    font-size: 16px; /* أصغر */
     font-weight: 600;
 }
 
-.registerTitle::after {
-    content: "";
-    position: absolute;
-    width: 80px;
-    height: 4px;
-    background: var(--SecondaryColor);
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
+.createTitle::after {
+    width: 50px;
+    height: 2px;
+    bottom: -5px;
 }
 
 /* ===== Form ===== */
 
-.registerForm {
+.createForm {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 0.7rem; /* أصغر */
 }
 
-.formGroup {
-    display: flex;
-    flex-direction: column;
-}
+/* ===== Labels ===== */
 
 .formGroup label {
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: 500;
+    margin-bottom: 3px;
+    font-size: 11px; /* أصغر */
     color: var(--textColor);
 }
 
+/* ===== Inputs ===== */
+
 .formGroup input,
 .formGroup select {
-    padding: 10px 15px;
-    border-radius: 8px;
+    padding: 6px 8px; /* أصغر */
+    border-radius: 6px;
     border: 1px solid var(--greyText);
     background: var(--inputColor);
-    outline: none;
-    transition: 0.3s ease;
-    font-size: 14px;
-}
-
-.formGroup input:focus,
-.formGroup select:focus {
-    border-color: var(--PrimaryColor);
-    box-shadow: 0 0 6px rgba(173, 63, 42, 0.3);
+    font-size: 11px; /* أصغر */
 }
 
 /* ===== Button ===== */
 
-.registerBtn {
-    margin-top: 1rem;
-    padding: 12px;
-    border: none;
-    border-radius: 30px;
+.createBtn {
+    margin-top: 0.5rem;
+    padding: 7px; /* أصغر */
+    border-radius: 20px;
     background: var(--gradientColor);
     color: var(--whiteColor);
     font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
+    font-size: 12px;
 }
 
-.registerBtn:hover {
-    background: var(--PrimaryColor);
-    transform: translateY(-2px);
+/* ===== Link ===== */
+
+.createContainer p {
+    font-size: 11px;
 }

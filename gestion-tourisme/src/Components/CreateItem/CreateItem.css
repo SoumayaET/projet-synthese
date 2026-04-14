@@ -7,11 +7,8 @@
     
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(20, 30%, 15%);
-    
     --textColor: hsl(20, 25%, 25%);
-    --whiteColorDeam: hsl(30, 40%, 92%);
     --greyText: hsl(25, 10%, 45%);
-    
     --inputColor: hsl(30, 30%, 94%);
     --bodyColor: hsl(30, 50%, 96%);
     --cardBG: hsl(30, 35%, 90%);
@@ -19,7 +16,7 @@
 
 /* ===== Section ===== */
 
-.createHotel{
+.createTrip {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,25 +25,29 @@
     padding: 2rem;
 }
 
-.createContainer{
+/* ===== Container ===== */
+
+.createContainer {
     background: var(--cardBG);
     padding: 2.5rem;
     border-radius: 15px;
     width: 100%;
-    max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 520px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 /* ===== Title ===== */
 
-.createTitle{
+.createTitle {
     text-align: center;
     margin-bottom: 2rem;
     color: var(--PrimaryColor);
     position: relative;
+    font-size: 22px;
+    font-weight: 700;
 }
 
-.createTitle::after{
+.createTitle::after {
     content: "";
     position: absolute;
     width: 80px;
@@ -55,45 +56,60 @@
     bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 5px;
 }
 
 /* ===== Form ===== */
 
-.createForm{
+.createForm {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
 
-.formGroup{
+/* ===== Inputs ===== */
+
+.formGroup {
     display: flex;
     flex-direction: column;
 }
 
-.formGroup label{
+.formGroup label {
     margin-bottom: 5px;
     font-size: 14px;
     font-weight: 500;
     color: var(--textColor);
 }
 
-.formGroup input{
+/* input + select نفس الستايل */
+.formGroup input,
+.formGroup select {
     padding: 10px 15px;
     border-radius: 8px;
     border: 1px solid var(--greyText);
     background: var(--inputColor);
     outline: none;
     transition: 0.3s ease;
+    font-size: 14px;
 }
 
-.formGroup input:focus{
+/* focus */
+.formGroup input:focus,
+.formGroup select:focus {
     border-color: var(--PrimaryColor);
-    box-shadow: 0 0 5px rgba(173, 63, 42, 0.4);
+    box-shadow: 0 0 6px rgba(173, 63, 42, 0.4);
 }
 
-/* ===== Button ===== */
+/* file input تحسين */
+.formGroup input[type="file"] {
+    padding: 8px;
+    background: var(--whiteColor);
+    cursor: pointer;
+}
 
-.createBtn{
+/* ===== Buttons ===== */
+
+.createBtn {
     margin-top: 1rem;
     padding: 12px;
     border: none;
@@ -103,9 +119,36 @@
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s ease;
+    margin-right: 10px;
+    font-size: 14px;
 }
 
-.createBtn:hover{
+/* hover */
+.createBtn:hover {
     background: var(--PrimaryColor);
     transform: translateY(-2px);
+}
+
+/* group buttons */
+.btnGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 600px) {
+    .createContainer {
+        padding: 1.5rem;
+    }
+
+    .createTitle {
+        font-size: 18px;
+    }
+
+    .createBtn {
+        padding: 10px;
+        font-size: 13px;
+    }
 }

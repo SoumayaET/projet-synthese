@@ -1,0 +1,92 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 🔥 SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: var(--PrimaryColor);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.sidebar button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar button:hover {
+  background: #eee;
+}
+
+.sidebar .active {
+  background: black;
+  color: white;
+}
+
+/* 🔥 CONTENT */
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* 🔥 TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: var(--PrimaryColor);
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 🔥 BUTTONS */
+.editBtn, .deleteBtn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.editBtn {
+  background: orange;
+  color: white;
+  margin-right: 5px;
+}
+
+.deleteBtn {
+  background: red;
+  color: white;
+}
+
+.editBtn:hover,
+.deleteBtn:hover {
+  opacity: 0.8;
+}

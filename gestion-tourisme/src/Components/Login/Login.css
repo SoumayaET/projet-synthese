@@ -25,45 +25,35 @@
     justify-content: center;
     align-items: center;
     background: var(--bodyColor);
-    padding: 2rem;
+    padding: 1rem; /* صغّرنا */
 }
 
 /* ===== Container ===== */
 
 .registerContainer {
     background: var(--cardBG);
-    padding: 2.5rem;
+    padding: 1.5rem; /* كان 2.5rem */
     border-radius: 15px;
     width: 100%;
-    max-width: 500px;
+    max-width: 380px; /* كان 500px */
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     transition: 0.3s ease;
-}
-
-.registerContainer:hover {
-    transform: translateY(-3px);
 }
 
 /* ===== Title ===== */
 
 .registerTitle {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem; /* كان 2rem */
     color: var(--PrimaryColor);
     position: relative;
-    font-size: 24px;
+    font-size: 18px; /* كان 24px */
     font-weight: 600;
 }
 
 .registerTitle::after {
-    content: "";
-    position: absolute;
-    width: 80px;
-    height: 4px;
-    background: var(--SecondaryColor);
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 60px; /* كان 80px */
+    height: 3px;
 }
 
 /* ===== Form ===== */
@@ -71,53 +61,30 @@
 .registerForm {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 0.8rem; /* كان 1.2rem */
 }
 
-.formGroup {
-    display: flex;
-    flex-direction: column;
-}
+/* ===== Inputs ===== */
 
 .formGroup label {
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--textColor);
+    margin-bottom: 4px;
+    font-size: 12px; /* كان 14px */
 }
 
 .formGroup input,
 .formGroup select {
-    padding: 10px 15px;
+    padding: 8px 10px; /* كان 10px 15px */
     border-radius: 8px;
     border: 1px solid var(--greyText);
     background: var(--inputColor);
-    outline: none;
-    transition: 0.3s ease;
-    font-size: 14px;
-}
-
-.formGroup input:focus,
-.formGroup select:focus {
-    border-color: var(--PrimaryColor);
-    box-shadow: 0 0 6px rgba(173, 63, 42, 0.3);
+    font-size: 12px; /* كان 14px */
 }
 
 /* ===== Button ===== */
 
 .registerBtn {
-    margin-top: 1rem;
-    padding: 12px;
-    border: none;
+    margin-top: 0.5rem;
+    padding: 8px; /* كان 12px */
     border-radius: 30px;
-    background: var(--gradientColor);
-    color: var(--whiteColor);
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.registerBtn:hover {
-    background: var(--PrimaryColor);
-    transform: translateY(-2px);
+    font-size: 13px;
 }
